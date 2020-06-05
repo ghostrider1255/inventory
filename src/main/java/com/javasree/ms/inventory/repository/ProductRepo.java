@@ -9,5 +9,5 @@ public interface ProductRepo extends CrudRepository<Product,Long> {
 
     List<Product> findAll();
 
-    Product findByName();
+    Product findByName(String name);
 }

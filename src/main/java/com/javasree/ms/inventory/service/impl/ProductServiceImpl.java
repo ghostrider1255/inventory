@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto findByName(String name) {
-        Product product = this.productRepo.findByName();
+        Product product = this.productRepo.findByName(name);
         return this.modelMapper.map(product,ProductDto.class);
     }
 }

@@ -10,7 +10,7 @@ public interface BrandRepo extends CrudRepository<Brand,Long> {
 
     List<Brand> findAll();
 
-    Brand findByName();
+    Brand findByName(String name);
 
-    Brand findByCode();
+    Brand findByCode(String code);
 }

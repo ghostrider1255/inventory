@@ -30,11 +30,11 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public BrandDto findBrandByName(String name) {
-        return this.modelMapper.map(brandRepo.findByName(),BrandDto.class);
+        return this.modelMapper.map(brandRepo.findByName(name),BrandDto.class);
     }
 
     @Override
     public BrandDto findBrandByCode(String code) {
-        return this.modelMapper.map(brandRepo.findByCode(),BrandDto.class);
+        return this.modelMapper.map(brandRepo.findByCode(code),BrandDto.class);
     }
 }

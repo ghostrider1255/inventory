@@ -27,7 +27,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public ProductCategoryDto findCategoryByName(String categoryName) {
-        ProductCategory category = this.categoryRepo.findByCategoryname(categoryName);
+        ProductCategory category = this.categoryRepo.findByCategoryName(categoryName);
         return this.modelMapper.map(category,ProductCategoryDto.class);
     }
 }

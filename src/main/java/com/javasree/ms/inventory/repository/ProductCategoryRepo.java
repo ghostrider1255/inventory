@@ -9,7 +9,7 @@ public interface ProductCategoryRepo extends CrudRepository<ProductCategory,Long
 
     List<ProductCategory> findAll();
 
-    ProductCategory findByCategoryname(String categoryName);
+    ProductCategory findByCategoryName(String categoryName);
 
     ProductCategory findByCode(String code);
 }

@@ -87,7 +87,7 @@ docker {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-data-jpa',
-            //'org.springframework.boot:spring-boot-starter-security',
+            'org.springframework.boot:spring-boot-starter-security',
             'org.springframework.boot:spring-boot-starter-test',
             'org.springframework.boot:spring-boot-devtools',
             'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client',

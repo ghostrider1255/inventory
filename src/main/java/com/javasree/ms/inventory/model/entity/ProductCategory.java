@@ -15,6 +15,24 @@ public class ProductCategory extends DefaultEntity{
     @Column(name="code", nullable = false, length = 15)
     private String code;
 
+    public ProductCategory(){}
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getDescription() {
         return description;
     }

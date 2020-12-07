@@ -10,4 +10,6 @@ public interface ProductCategoryService {
 
     ProductCategoryDto findCategoryByName(String categoryName);
 
+    ProductCategoryDto createCategory(ProductCategoryDto productCategoryDto);
+
 }

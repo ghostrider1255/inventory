@@ -10,4 +10,6 @@ public interface ProductService {
 
     ProductDto findByName(String name);
 
+    ProductDto createProduct(ProductDto productDto);
+
 }

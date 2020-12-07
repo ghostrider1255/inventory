@@ -80,6 +80,14 @@ docker {
     name "localhost:5000/${project.name}:${project.version}"
     files tasks.bootJar.outputs
     //tag 'localhost:5000/${project.name}:${project.version}'
+    copy {
+        from "$buildDir/resources/main/docker/filebeat.yml"
+        into "$buildDir/docker/"
+    }
+    copy {
+        from "$buildDir/resources/main/docker/log4j2.xml"
+        into "$buildDir/docker/"
+    }
     dockerfile file('Dockerfile')
     //buildArgs([HOST_APP_JAR_LOC: 'version'])
 }
@@ -95,7 +103,8 @@ dependencies {
             'org.modelmapper:modelmapper:2.3.5',
             'io.jsonwebtoken:jjwt:0.9.1',
             'mysql:mysql-connector-java:8.0.11',
-            'com.google.code.gson:gson:2.8.2'
+            'com.google.code.gson:gson:2.8.2',
+            'org.springframework.boot:spring-boot-starter-log4j2'
 }
 
 task versionIncr {

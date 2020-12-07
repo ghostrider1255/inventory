@@ -30,4 +30,11 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         ProductCategory category = this.categoryRepo.findByCategoryName(categoryName);
         return this.modelMapper.map(category,ProductCategoryDto.class);
     }
+
+    @Override
+    public ProductCategoryDto createCategory(ProductCategoryDto productCategoryDto) {
+        ProductCategory productCategory = this.modelMapper.map(productCategoryDto,ProductCategory.class);
+        categoryRepo.save(productCategory);
+        return productCategoryDto;
+    }
 }

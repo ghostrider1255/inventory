@@ -11,4 +11,6 @@ public interface BrandService {
     BrandDto findBrandByName(String name);
 
     BrandDto findBrandByCode(String code);
+
+    BrandDto crateBrand(BrandDto brandDto);
 }

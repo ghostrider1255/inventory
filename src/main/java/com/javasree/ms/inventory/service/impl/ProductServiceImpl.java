@@ -31,4 +31,11 @@ public class ProductServiceImpl implements ProductService {
         Product product = this.productRepo.findByName(name);
         return this.modelMapper.map(product,ProductDto.class);
     }
+
+    @Override
+    public ProductDto createProduct(ProductDto productDto) {
+        Product product = this.modelMapper.map(productDto,Product.class);
+        productRepo.save(product);
+        return productDto;
+    }
 }

@@ -15,6 +15,8 @@ public class Product extends DefaultEntity{
     @OneToMany
     private Set<ProductCategory> categories;
 
+    public Product(){}
+
     public String getName() {
         return name;
     }

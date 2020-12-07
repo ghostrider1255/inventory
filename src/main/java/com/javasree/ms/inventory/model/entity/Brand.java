@@ -17,6 +17,8 @@ public class Brand extends DefaultEntity{
     @Column(name="code", nullable = false, length = 20)
     private String code;
 
+    public Brand(){}
+
     public String getName() {
         return name;
     }

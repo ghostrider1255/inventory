@@ -37,4 +37,11 @@ public class BrandServiceImpl implements BrandService {
     public BrandDto findBrandByCode(String code) {
         return this.modelMapper.map(brandRepo.findByCode(code),BrandDto.class);
     }
+
+    @Override
+    public BrandDto crateBrand(BrandDto brandDto) {
+        Brand brand = this.modelMapper.map(brandDto,Brand.class);
+        brandRepo.save(brand);
+        return brandDto;
+    }
 }

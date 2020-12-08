@@ -8,7 +8,8 @@ ARG APP_CONFIG_DIR=/opt/config
 
 RUN apt-get update && \
     apt-get install -y curl wget && \
-    wget https://download.elastic.co/beats/filebeat/filebeat-${FILEBEAT_VERSION}-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
+    #wget https://download.elastic.co/beats/filebeat/filebeat-${FILEBEAT_VERSION}-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
+    wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
     cd /opt && \
     tar xzvf filebeat.tar.gz && \
     cd filebeat-* && \

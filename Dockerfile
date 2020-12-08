@@ -1,15 +1,23 @@
 FROM openjdk:8
-
 MAINTAINER raju
-
 ENV FILEBEAT_VERSION=7.10.0
 
 ARG HOST_APP_JAR_LOC
 ARG APP_HOME_DIR=/opt/app
-
 ARG APP_CONFIG_DIR=/opt/config
 
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && \
+    apt-get install -y curl wget && \
+    wget https://download.elastic.co/beats/filebeat/filebeat-${FILEBEAT_VERSION}-x86_64.tar.gz -O /opt/filebeat.tar.gz && \
+    cd /opt && \
+    tar xzvf filebeat.tar.gz && \
+    cd filebeat-* && \
+    cp filebeat /bin && \
+    cd /opt && \
+    rm -rf filebeat* && \
+    apt-get purge -y wget && \
+    apt-get autoremove -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p $APP_HOME_DIR \
     mkdir -p $APP_CONFIG_DIR \
@@ -29,5 +37,5 @@ ENV APP_CONFIG_DIR $APP_CONFIG_DIR
 
 #ENTRYPOINT ["java","-jar","/opt/app/application.jar","--spring.config.location=file:${APP_CONFIG_DIR}/application.properties"]
 ENTRYPOINT ["java","-jar","/opt/app/application.jar","--spring.config.location=file:${APP_CONFIG_DIR}/"]
-#CMD ["filebeat", "-e", "-c","${APP_CONFIG_DIR}/filebeat.yml"]
+CMD ["filebeat", "-e", "-c","${APP_CONFIG_DIR}/filebeat.yml"]
 #CMD ["filebeat", "-e"]

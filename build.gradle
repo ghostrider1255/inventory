@@ -80,14 +80,6 @@ docker {
     name "localhost:5000/${project.name}:${project.version}"
     files tasks.bootJar.outputs,"$buildDir/resources/main/docker/filebeat.yml","$buildDir/resources/main/docker/log4j2.xml"
     //tag 'localhost:5000/${project.name}:${project.version}'
-    /*copy {
-            from "$buildDir/resources/main/docker/filebeat.yml"
-        into "$buildDir/docker/"
-    }*/
-    /*copy {
-        from "$buildDir/resources/main/docker/log4j2.xml"
-        into "$buildDir/docker/"
-    }*/
     dockerfile file('Dockerfile')
     //buildArgs([HOST_APP_JAR_LOC: 'version'])
 }

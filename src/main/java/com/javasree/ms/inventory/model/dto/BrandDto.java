@@ -24,4 +24,9 @@ public class BrandDto {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return "{ name: "+this.name+", code: "+this.code+", description: "+this.description+"}";
+    }
 }

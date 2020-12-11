@@ -941,7 +941,7 @@ path.data: ${path.home}/data
 # The logs path for a Filebeat installation. This is the default location for
 # the Beat's log files. If not set by a CLI flag or in the configuration file,
 # the default for the logs path is a logs subdirectory inside the home path.
-path.logs: ${path.home}/logs
+path.logs: ${path.home}/filebeatlogs
 
 
 # ================================== Template ==================================

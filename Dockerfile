@@ -41,8 +41,4 @@ RUN chmod 755 ${APP_HOME_DIR}/application.sh
 
 ENV APP_CONFIG_DIR $APP_CONFIG_DIR
 
-#CMD ["/bin/bash","filebeat", "-e", "-c","${APP_CONFIG_DIR}/filebeat.yml","-e","-d","\"*\""]
-#ENTRYPOINT ["java","-jar","/opt/app/application.jar","--spring.config.location=file:${APP_CONFIG_DIR}/application.properties"]
-#ENTRYPOINT ["java","-jar","/opt/app/application.jar","--spring.config.location=file:${APP_CONFIG_DIR}/","--logging.config=file:${APP_CONFIG_DIR}/log4j2.xml"]
-
 ENTRYPOINT ["/opt/app/application.sh"]
